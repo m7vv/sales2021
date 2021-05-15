@@ -18,3 +18,9 @@ Project is created with:
 
 ## Setup
 To run this project, install it locally using pip
+For Linux or Mac
+`
+export FLASK_APP=sales
+export FLASK_ENV=development
+flask run
+`
