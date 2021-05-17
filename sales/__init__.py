@@ -22,6 +22,7 @@ def create_app(test_config=None):
     db.init_app(app)
     migrate.init_app(app, db)
     from .models.films import Film
+    from .models.foods import Food
 
     # ensure the instance folder exists
     try:
