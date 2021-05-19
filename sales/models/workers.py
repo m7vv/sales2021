@@ -8,6 +8,7 @@ class Worker(db.Model):
     uuid = db.Column(db.String(36), unique=True)
     name = db.Column(db.String, nullable=False)
     salary = db.Column(db.Integer)
+    orders = db.relationship('Order', backref='worker_orders')
 
     def __init__(self, name, salary):
         self.name = name

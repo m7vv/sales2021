@@ -6,3 +6,5 @@ db = SQLAlchemy()
 migrate = Migrate()
 
 from .workers import Worker
+from .orders import Order
+from .foods import Food
