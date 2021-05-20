@@ -1,6 +1,6 @@
 import uuid
 
-from . import db
+from . import db, Worker
 
 
 class Order(db.Model):
@@ -21,7 +21,9 @@ class Order(db.Model):
 
     def to_dict(self):
         return {
-            'name': self.name,
+            'worker': self.worker.name,
             'uuid': self.uuid,
-            'salary': self.salary
+            'quantity': self.quantity,
+            'food': self.food,
+
         }

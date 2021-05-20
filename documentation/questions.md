@@ -8,3 +8,7 @@ to address this file as module in __init__.py of module Why we should write
 
 ## Question 2
 Where I should import models first approach I made import in sales/__init__.py but I think it is not good.
+
+## Question 3
+Working with orders:
+want to show name of worker instead of id for that additional study of context needed
