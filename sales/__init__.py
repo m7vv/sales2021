@@ -1,10 +1,12 @@
 import os
-from .config import Config
 from flask import Flask
+from .config import Config
+from .models import db, migrate
+from .rest import init_app
 
 
 def create_app(test_config=None):
-    # create and configure the app
+    """create and configure the app"""
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
@@ -18,7 +20,7 @@ def create_app(test_config=None):
         # load the test config if passed in
         app.config.from_mapping(test_config)
     # init
-    from .models import db, migrate
+
     db.init_app(app)
     migrate.init_app(app, db)
 
@@ -33,7 +35,6 @@ def create_app(test_config=None):
     def hello():
         return 'This is pet project'
 
-    from .rest import init_app
     init_app(app)
 
     return app
