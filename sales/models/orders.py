@@ -21,7 +21,7 @@ class Order(db.Model):
 
     def to_dict(self):
         return {
-            'worker': self.worker.name,
+            'worker': self.worker,
             'uuid': self.uuid,
             'quantity': self.quantity,
             'food': self.food,

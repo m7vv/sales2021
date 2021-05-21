@@ -21,8 +21,6 @@ def create_app(test_config=None):
     from .models import db, migrate
     db.init_app(app)
     migrate.init_app(app, db)
-    from .models.films import Film
-
 
     # ensure the instance folder exists
     try:
@@ -31,9 +29,9 @@ def create_app(test_config=None):
         pass
 
     # a simple page that says hello
-    @app.route('/hello')
+    @app.route('/about')
     def hello():
-        return 'Hello, World!'
+        return 'This is pet project'
 
     from .rest import init_app
     init_app(app)
