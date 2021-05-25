@@ -1,4 +1,5 @@
 # Sales 2021
+[![GitHub Stars](https://img.shields.io/github/stars/m7vv/sales2021.svg)]
 Simple webserver for saving information about sales of food in snack bars.
 ##Table of contents
 * [General info](#general-info)
