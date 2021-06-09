@@ -1,0 +1,10 @@
+06/09/2021 02:57:55 PM attempt to create  food without json
+06/09/2021 02:59:43 PM Food with uuid 6842973e-e65f-4118-8d9b-10406186773b was created
+06/09/2021 02:59:43 PM attempt to create  food without json
+INFO 06/09/2021 03:07:32 PM Food with uuid 8ee1ba42-f019-4223-adaf-937c066be734 was deleted
+INFO 06/09/2021 03:07:32 PM Food with uuid a80b7be9-26e0-4ae0-b136-639208312d30 was updated
+INFO 06/09/2021 03:07:32 PM Food with uuid f41575da-3020-42b0-a2f5-9bac4c68d1f8 was updated
+INFO 06/09/2021 03:07:32 PM Food with uuid b026522c-87d5-41a5-b7aa-c2cd51b6237f was updated
+INFO 06/09/2021 03:07:32 PM Food with uuid c3f5d9cc-dc8e-4ead-8d18-6cf83234a343 was created
+ERROR 06/09/2021 03:07:32 PM attempt to create  food without json
+INFO 06/09/2021 03:07:32 PM Food with uuid 4afc2cd0-7e7e-450e-a7eb-ebc649ec2262 was updated
