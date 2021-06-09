@@ -8,14 +8,15 @@ Simple webservice for saving information about sales of food in snack bars.
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Testing](#testing)
 
 ## General info
 Educational project for Online Python External program
 
 ## Technologies
 Project is created with:
-*Python
-*Flask
+* Python
+* Flask
 
 ## Setup
 To run this project, install it locally using pip
@@ -24,4 +25,20 @@ For Linux or Mac
 export FLASK_APP=sales
 export FLASK_ENV=development
 flask run
+```
+
+## Testing
+Using of unit test
+```
+python -m unittest discover
+```
+Using of coverage
+```
+coverage run -m unittest discover
+coverage report
+```
+or for only for backend
+```
+coverage run --source=sales -m unittest discover
+
 ```
