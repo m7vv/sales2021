@@ -4,6 +4,7 @@ from . import db
 
 
 class Food(db.Model):
+    """description of food model for SQLAlchemy """
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     uuid = db.Column(db.String(36), unique=True)

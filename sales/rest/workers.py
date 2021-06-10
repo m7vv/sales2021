@@ -6,8 +6,20 @@ from sales.models.workers import Worker
 
 
 class WorkersApi(Resource):
+    """
+    A class to specify api for workers items
+
+    Methods
+    ______
+    get(self, uuid=None)
+    post(self)
+    put(self, uuid)
+    patch(self, uuid)
+    delete(self, uuid)
+    """
 
     def get(self, uuid=None):
+        """return all workers in JSON format if uuid=None otherwise retrun specific worker specified by uuid"""
         if not uuid:
             workers = db.session.query(Worker).all()
             return [f.to_dict() for f in workers], 200
@@ -17,6 +29,7 @@ class WorkersApi(Resource):
         return worker.to_dict(), 200
 
     def post(self):
+        """create new worker item based on request JSON data"""
         worker_json = request.json
         if not worker_json:
             return {'message': 'Wrong data'}, 400
@@ -32,6 +45,7 @@ class WorkersApi(Resource):
         return {'message': 'Created successfully', 'uuid': worker.uuid}, 201
 
     def put(self, uuid):
+        """update whole worker item specified by uuid based on request JSON data"""
         worker_json = request.json
         if not worker_json:
             return {'message': 'Wrong data'}, 400
@@ -48,6 +62,7 @@ class WorkersApi(Resource):
         return {'message': 'Updated successfully'}, 200
 
     def patch(self, uuid):
+        """update parts of worker item specified by uuid based on request JSON data"""
         worker = db.session.query(Worker).filter_by(uuid=uuid).first()
         if not worker:
             return "", 404
@@ -65,6 +80,7 @@ class WorkersApi(Resource):
         return {'message': 'Updated successfully'}, 200
 
     def delete(self, uuid):
+        """delete worker item specified by uuid"""
         worker = db.session.query(Worker).filter_by(uuid=uuid).first()
         if not worker:
             return "", 404

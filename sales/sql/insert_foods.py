@@ -5,6 +5,7 @@ app = create_app()
 
 
 def populate_foods():
+    """helper to add foods to project database"""
     gamburger = Food(
         name='Gamburger',
         price=2000,

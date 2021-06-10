@@ -4,6 +4,7 @@ from . import db, Worker
 
 
 class Order(db.Model):
+    """description of food model for SQLAlchemy """
     id = db.Column(db.Integer, primary_key=True)
     uuid = db.Column(db.String(36), unique=True)
     quantity = db.Column(db.Integer)

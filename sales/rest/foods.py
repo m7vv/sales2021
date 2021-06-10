@@ -14,8 +14,20 @@ logging.basicConfig(filename='sales.log',
 
 
 class FoodsApi(Resource):
+    """
+    A class to specify api for foods items
+
+    Methods
+    ______
+    get(self, uuid=None)
+    post(self)
+    put(self, uuid)
+    patch(self, uuid)
+    delete(self, uuid)
+    """
 
     def get(self, uuid=None):
+        """returns all foods in JSON format if uuid=None otherwise retrun specific food specified by uuid"""
         if not uuid:
             foods = db.session.query(Food).all()
             return [f.to_dict() for f in foods], 200
@@ -25,6 +37,7 @@ class FoodsApi(Resource):
         return food.to_dict(), 200
 
     def post(self):
+        """create new food item based on request JSON data"""
         food_json = request.json
         if not food_json:
             logging.error('Attempt to create  food without json')
@@ -43,6 +56,7 @@ class FoodsApi(Resource):
         return {'message': 'Created successfully', 'uuid': food.uuid}, 201
 
     def put(self, uuid):
+        """update whole food item specified by uuid based on request JSON data"""
         food_json = request.json
         if not food_json:
             return {'message': 'Wrong data'}, 400
@@ -61,6 +75,7 @@ class FoodsApi(Resource):
         return {'message': 'Updated successfully'}, 200
 
     def patch(self, uuid):
+        """update parts of patch item specified by uuid based on request JSON data"""
         food = db.session.query(Food).filter_by(uuid=uuid).first()
         if not food:
             return "", 404
@@ -79,6 +94,7 @@ class FoodsApi(Resource):
         return {'message': 'Updated successfully'}, 200
 
     def delete(self, uuid):
+        """delete food item specified by uuid"""
         food = db.session.query(Food).filter_by(uuid=uuid).first()
         if not food:
             return "", 404

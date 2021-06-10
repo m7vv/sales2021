@@ -1,3 +1,6 @@
+"""
+realisation of api for foods, orders, workers
+"""
 from flask_restful import Api
 
 from .orders import OrdersApi

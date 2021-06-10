@@ -6,6 +6,7 @@ from sales.models.workers import Worker
 
 
 class TestWorkerApi(unittest.TestCase):
+    """test cases for worker api"""
     db_fd, db_path = tempfile.mkstemp()
     app = create_app({
         'TESTING': True,

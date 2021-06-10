@@ -5,6 +5,7 @@ app = create_app()
 
 
 def populate_workers():
+    """helper to add workers to project database"""
     ivanov = Worker(
         name='Ivanov',
         salary=6000,

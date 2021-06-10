@@ -6,6 +6,7 @@ from sales.models.foods import Food
 
 
 class TestFoodApi(unittest.TestCase):
+    """test cases for order api"""
     db_fd, db_path = tempfile.mkstemp()
     app = create_app({
         'TESTING': True,

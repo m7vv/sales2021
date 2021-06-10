@@ -5,7 +5,7 @@ app = create_app()
 
 
 def populate_orders():
-
+    """helper to add orders to project database"""
     order1 = Order(
         worker=1,
         food=2,
