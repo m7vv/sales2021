@@ -1,10 +1,32 @@
-06/09/2021 02:57:55 PM attempt to create  food without json
-06/09/2021 02:59:43 PM Food with uuid 6842973e-e65f-4118-8d9b-10406186773b was created
-06/09/2021 02:59:43 PM attempt to create  food without json
-INFO 06/09/2021 03:07:32 PM Food with uuid 8ee1ba42-f019-4223-adaf-937c066be734 was deleted
-INFO 06/09/2021 03:07:32 PM Food with uuid a80b7be9-26e0-4ae0-b136-639208312d30 was updated
-INFO 06/09/2021 03:07:32 PM Food with uuid f41575da-3020-42b0-a2f5-9bac4c68d1f8 was updated
-INFO 06/09/2021 03:07:32 PM Food with uuid b026522c-87d5-41a5-b7aa-c2cd51b6237f was updated
-INFO 06/09/2021 03:07:32 PM Food with uuid c3f5d9cc-dc8e-4ead-8d18-6cf83234a343 was created
-ERROR 06/09/2021 03:07:32 PM attempt to create  food without json
-INFO 06/09/2021 03:07:32 PM Food with uuid 4afc2cd0-7e7e-450e-a7eb-ebc649ec2262 was updated
+INFO 06/09/2021 09:39:36 PM Food with uuid 3e7df41b-9975-4cf9-a47e-e2d29c603b30 was deleted
+INFO 06/09/2021 09:39:36 PM Food with uuid 8ec02581-7360-4ee3-ab50-1de067566f96 was updated
+INFO 06/09/2021 09:39:36 PM Food with uuid 5ff633de-697d-431d-b39e-c2704c6a6830 was updated
+INFO 06/09/2021 09:39:36 PM Food with uuid febad000-76bc-46f7-960f-18bfcc3bc3f5 was updated
+ERROR 06/09/2021 09:39:36 PM Food was not created due wrong data
+INFO 06/09/2021 09:39:36 PM Food with uuid 7749dedc-c3ed-438f-a806-416ef3980e5b was created
+ERROR 06/09/2021 09:39:36 PM Attempt to create  food without json
+INFO 06/09/2021 09:39:36 PM Food with uuid 8de27d33-0754-4376-9fd1-401d31a2857d was updated
+INFO 06/09/2021 09:43:51 PM Food with uuid 9afdd691-b3c7-4030-8ec1-1d37b059ce00 was deleted
+INFO 06/09/2021 09:43:51 PM Food with uuid 9a7301ce-a531-4957-a826-f655693059d4 was updated
+INFO 06/09/2021 09:43:51 PM Food with uuid 5e08615e-187e-44f5-9b75-9cf28bed29ec was updated
+INFO 06/09/2021 09:43:51 PM Food with uuid 75a0f7e2-1c34-4e92-afea-d2e566621517 was updated
+ERROR 06/09/2021 09:43:51 PM Food was not created due wrong data
+INFO 06/09/2021 09:43:51 PM Food with uuid 5382aae5-53f7-4ad1-a02d-117c8a277dc2 was created
+ERROR 06/09/2021 09:43:51 PM Attempt to create  food without json
+INFO 06/09/2021 09:43:51 PM Food with uuid 52b70d58-ceb1-4ab8-9383-6c1bb89a52d9 was updated
+INFO 06/09/2021 09:47:20 PM Food with uuid 8371b22f-3991-4544-9021-407085c50d8a was deleted
+INFO 06/09/2021 09:47:20 PM Food with uuid f57886e8-37dc-4085-921a-333dcc162ac4 was updated
+INFO 06/09/2021 09:47:20 PM Food with uuid a745af88-9147-48a8-a0d1-41b9ab9b6c6f was updated
+INFO 06/09/2021 09:47:20 PM Food with uuid 1aafd330-f8be-473c-b5c9-a1233b70aa16 was updated
+ERROR 06/09/2021 09:47:20 PM Food was not created due wrong data
+INFO 06/09/2021 09:47:20 PM Food with uuid d71be743-2147-47fa-b834-956111712040 was created
+ERROR 06/09/2021 09:47:20 PM Attempt to create  food without json
+INFO 06/09/2021 09:47:20 PM Food with uuid 9652f3ee-5348-4b24-82ac-fdd93bca4fe2 was updated
+INFO 06/09/2021 09:47:20 PM Worker with uuid 441496d4-c7c0-4e4e-814b-4861074e25ae was deleted
+INFO 06/09/2021 09:47:20 PM Worker with uuid eb22ee68-39c5-418c-82fc-1c84582887ac was updated
+INFO 06/09/2021 09:47:20 PM Worker with uuid 94653fdc-85df-48be-beb1-f4ccce420583 was updated
+INFO 06/09/2021 09:47:20 PM Worker with uuid be3508e5-cd00-4529-8aff-600e46fe13a7 was updated
+ERROR 06/09/2021 09:47:20 PM Worker was not created due wrong data
+INFO 06/09/2021 09:47:20 PM Worker with uuid fe2cb518-1663-4cf0-9f49-f31f0801d9ed was created
+ERROR 06/09/2021 09:47:20 PM Attempt to create  worker without json
+INFO 06/09/2021 09:47:20 PM Worker with uuid 43e51bce-fa42-4674-bf48-cededde08fbd was updated

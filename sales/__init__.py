@@ -3,7 +3,14 @@ from flask import Flask
 from .config import Config
 from .models import db, migrate
 from .rest import init_app
+import logging
 
+logging.basicConfig(filename='sales.log',
+                    encoding='utf-8',
+                    level=logging.DEBUG,
+                    format='%(levelname)s %(asctime)s %(message)s',
+                    datefmt='%m/%d/%Y %I:%M:%S %p'
+                    )
 
 def create_app(test_config=None):
     """create and configure the app"""

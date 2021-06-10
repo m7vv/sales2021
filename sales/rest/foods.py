@@ -1,16 +1,10 @@
+import logging
+
 from flask import request
 from flask_restful import Resource
 
 from sales.models import db
 from sales.models.foods import Food
-import logging
-
-logging.basicConfig(filename='sales.log',
-                    encoding='utf-8',
-                    level=logging.DEBUG,
-                    format='%(levelname)s %(asctime)s %(message)s',
-                    datefmt='%m/%d/%Y %I:%M:%S %p'
-                    )
 
 
 class FoodsApi(Resource):

@@ -1,3 +1,5 @@
+import logging
+
 from flask import request
 from flask_restful import Resource
 
@@ -32,6 +34,7 @@ class WorkersApi(Resource):
         """create new worker item based on request JSON data"""
         worker_json = request.json
         if not worker_json:
+            logging.error('Attempt to create  worker without json')
             return {'message': 'Wrong data'}, 400
         try:
             worker = Worker(
@@ -41,7 +44,9 @@ class WorkersApi(Resource):
             db.session.add(worker)
             db.session.commit()
         except (ValueError, KeyError):
+            logging.error(f'Worker was not created due wrong data')
             return {'message': 'Wrong data'}, 400
+        logging.info(f'Worker with uuid {worker.uuid} was created')
         return {'message': 'Created successfully', 'uuid': worker.uuid}, 201
 
     def put(self, uuid):
@@ -58,7 +63,9 @@ class WorkersApi(Resource):
             )
             db.session.commit()
         except (ValueError, KeyError):
+            logging.error(f'Worker with uuid {uuid} was not updated due wrong data')
             return {'message': 'Wrong data'}, 400
+        logging.info(f'Worker with uuid {uuid} was updated')
         return {'message': 'Updated successfully'}, 200
 
     def patch(self, uuid):
@@ -77,6 +84,7 @@ class WorkersApi(Resource):
 
         db.session.add(worker)
         db.session.commit()
+        logging.info(f'Worker with uuid {uuid} was updated')
         return {'message': 'Updated successfully'}, 200
 
     def delete(self, uuid):
@@ -86,4 +94,5 @@ class WorkersApi(Resource):
             return "", 404
         db.session.delete(worker)
         db.session.commit()
+        logging.info(f'Worker with uuid {uuid} was deleted')
         return '', 204

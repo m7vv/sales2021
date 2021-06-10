@@ -1,3 +1,6 @@
+import logging
+
+
 from flask import request
 from flask_restful import Resource
 
@@ -32,6 +35,7 @@ class OrdersApi(Resource):
         """create new order item based on request JSON data"""
         order_json = request.json
         if not order_json:
+            logging.error('Attempt to create  order without json')
             return {'message': 'Wrong data'}, 400
         try:
             order = Order(
@@ -41,7 +45,9 @@ class OrdersApi(Resource):
             db.session.add(order)
             db.session.commit()
         except (ValueError, KeyError):
+            logging.error(f'Order was not created due wrong data')
             return {'message': 'Wrong data'}, 400
+        logging.info(f'Order with uuid {order.uuid} was created')
         return {'message': 'Created successfully', 'uuid': order.uuid}, 201
 
     def put(self, uuid):
@@ -58,7 +64,9 @@ class OrdersApi(Resource):
             )
             db.session.commit()
         except (ValueError, KeyError):
+            logging.error(f'Order with uuid {uuid} was not updated due wrong data')
             return {'message': 'Wrong data'}, 400
+        logging.info(f'Order with uuid {uuid} was updated')
         return {'message': 'Updated successfully'}, 200
 
     def patch(self, uuid):
@@ -77,6 +85,7 @@ class OrdersApi(Resource):
 
         db.session.add(order)
         db.session.commit()
+        logging.info(f'Order with uuid {uuid} was updated')
         return {'message': 'Updated successfully'}, 200
 
     def delete(self, uuid):
@@ -86,4 +95,5 @@ class OrdersApi(Resource):
             return "", 404
         db.session.delete(order)
         db.session.commit()
+        logging.info(f'Order with uuid {uuid} was deleted')
         return '', 204
