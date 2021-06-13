@@ -8,8 +8,10 @@ class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     uuid = db.Column(db.String(36), unique=True)
     quantity = db.Column(db.Integer)
-    worker = db.Column(db.Integer, db.ForeignKey('worker.id'))
-    food = db.Column(db.Integer, db.ForeignKey('food.id'))
+    worker_id = db.Column(db.Integer, db.ForeignKey('worker.id'))
+    worker = db.relationship('Worker', backref='worker_orders')
+    food_id = db.Column(db.Integer, db.ForeignKey('food.id'))
+    orders = db.relationship('Food', backref='food_orders')
 
     def __init__(self, worker, food, quantity):
         self.worker = worker

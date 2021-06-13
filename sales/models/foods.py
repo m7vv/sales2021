@@ -9,7 +9,7 @@ class Food(db.Model):
     name = db.Column(db.String, nullable=False)
     uuid = db.Column(db.String(36), unique=True)
     price = db.Column(db.Integer)
-    orders = db.relationship('Order', backref='food_orders')
+
 
     def __init__(self, name, price):
         self.name = name

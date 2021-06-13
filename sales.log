@@ -30,3 +30,6 @@ ERROR 06/09/2021 09:47:20 PM Worker was not created due wrong data
 INFO 06/09/2021 09:47:20 PM Worker with uuid fe2cb518-1663-4cf0-9f49-f31f0801d9ed was created
 ERROR 06/09/2021 09:47:20 PM Attempt to create  worker without json
 INFO 06/09/2021 09:47:20 PM Worker with uuid 43e51bce-fa42-4674-bf48-cededde08fbd was updated
+INFO 06/10/2021 12:54:57 AM  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO 06/10/2021 12:54:57 AM  * Restarting with stat
+INFO 06/10/2021 12:55:35 AM 127.0.0.1 - - [10/Jun/2021 00:55:35] "GET /api/orders HTTP/1.1" 200 -
