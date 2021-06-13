@@ -6,8 +6,8 @@ app = create_app()
 
 def populate_foods():
     """helper to add foods to project database"""
-    gamburger = Food(
-        name='Gamburger',
+    hamburger = Food(
+        name='Hamburger',
         price=2000,
     )
     pancake_milk = Food(
@@ -21,7 +21,7 @@ def populate_foods():
 
     with app.app_context():
         from sales.models import db
-        db.session.add(gamburger)
+        db.session.add(hamburger)
         db.session.add(pancake_milk)
         db.session.add(pancake_apples)
 

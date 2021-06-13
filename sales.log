@@ -33,3 +33,59 @@ INFO 06/09/2021 09:47:20 PM Worker with uuid 43e51bce-fa42-4674-bf48-cededde08fb
 INFO 06/10/2021 12:54:57 AM  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 INFO 06/10/2021 12:54:57 AM  * Restarting with stat
 INFO 06/10/2021 12:55:35 AM 127.0.0.1 - - [10/Jun/2021 00:55:35] "GET /api/orders HTTP/1.1" 200 -
+INFO 06/13/2021 02:01:40 PM  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO 06/13/2021 02:01:40 PM  * Restarting with stat
+INFO 06/13/2021 02:01:45 PM 127.0.0.1 - - [13/Jun/2021 14:01:45] "GET /api/foods/ HTTP/1.1" 200 -
+INFO 06/13/2021 02:01:48 PM 127.0.0.1 - - [13/Jun/2021 14:01:48] "[35m[1mGET /api/orders HTTP/1.1[0m" 500 -
+INFO 06/13/2021 02:01:48 PM 127.0.0.1 - - [13/Jun/2021 14:01:48] "GET /api/orders?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO 06/13/2021 02:01:48 PM 127.0.0.1 - - [13/Jun/2021 14:01:48] "GET /api/orders?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO 06/13/2021 02:01:48 PM 127.0.0.1 - - [13/Jun/2021 14:01:48] "GET /api/orders?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO 06/13/2021 02:04:33 PM  * Detected change in '/home/vv/projects/sales2021/sales/rest/orders.py', reloading
+INFO 06/13/2021 02:04:33 PM  * Restarting with stat
+INFO 06/13/2021 02:04:34 PM 127.0.0.1 - - [13/Jun/2021 14:04:34] "[35m[1mGET /api/orders HTTP/1.1[0m" 500 -
+INFO 06/13/2021 02:04:34 PM 127.0.0.1 - - [13/Jun/2021 14:04:34] "GET /api/orders?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO 06/13/2021 02:04:34 PM 127.0.0.1 - - [13/Jun/2021 14:04:34] "GET /api/orders?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO 06/13/2021 02:04:34 PM 127.0.0.1 - - [13/Jun/2021 14:04:34] "GET /api/orders?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO 06/13/2021 02:04:35 PM 127.0.0.1 - - [13/Jun/2021 14:04:35] "[35m[1mGET /api/orders HTTP/1.1[0m" 500 -
+INFO 06/13/2021 02:04:35 PM 127.0.0.1 - - [13/Jun/2021 14:04:35] "GET /api/orders?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO 06/13/2021 02:04:35 PM 127.0.0.1 - - [13/Jun/2021 14:04:35] "GET /api/orders?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO 06/13/2021 02:04:35 PM 127.0.0.1 - - [13/Jun/2021 14:04:35] "GET /api/orders?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO 06/13/2021 02:04:37 PM 127.0.0.1 - - [13/Jun/2021 14:04:37] "[35m[1mGET /api/orders HTTP/1.1[0m" 500 -
+INFO 06/13/2021 02:04:37 PM 127.0.0.1 - - [13/Jun/2021 14:04:37] "GET /api/orders?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO 06/13/2021 02:04:37 PM 127.0.0.1 - - [13/Jun/2021 14:04:37] "GET /api/orders?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO 06/13/2021 02:04:37 PM 127.0.0.1 - - [13/Jun/2021 14:04:37] "GET /api/orders?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO 06/13/2021 02:04:56 PM  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO 06/13/2021 02:04:56 PM  * Restarting with stat
+INFO 06/13/2021 02:05:01 PM 127.0.0.1 - - [13/Jun/2021 14:05:01] "[35m[1mGET /api/orders HTTP/1.1[0m" 500 -
+INFO 06/13/2021 02:05:01 PM 127.0.0.1 - - [13/Jun/2021 14:05:01] "GET /api/orders?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO 06/13/2021 02:05:01 PM 127.0.0.1 - - [13/Jun/2021 14:05:01] "GET /api/orders?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO 06/13/2021 02:05:01 PM 127.0.0.1 - - [13/Jun/2021 14:05:01] "GET /api/orders?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO 06/13/2021 02:05:02 PM 127.0.0.1 - - [13/Jun/2021 14:05:02] "[35m[1mGET /api/orders HTTP/1.1[0m" 500 -
+INFO 06/13/2021 02:05:02 PM 127.0.0.1 - - [13/Jun/2021 14:05:02] "GET /api/orders?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO 06/13/2021 02:05:02 PM 127.0.0.1 - - [13/Jun/2021 14:05:02] "GET /api/orders?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO 06/13/2021 02:05:02 PM 127.0.0.1 - - [13/Jun/2021 14:05:02] "GET /api/orders?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO 06/13/2021 02:05:50 PM 127.0.0.1 - - [13/Jun/2021 14:05:50] "[35m[1mGET /api/orders/a61a3726-ed46-44dc-8254-d646a2ef3eed HTTP/1.1[0m" 500 -
+INFO 06/13/2021 02:05:50 PM 127.0.0.1 - - [13/Jun/2021 14:05:50] "GET /api/orders/a61a3726-ed46-44dc-8254-d646a2ef3eed?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO 06/13/2021 02:05:50 PM 127.0.0.1 - - [13/Jun/2021 14:05:50] "GET /api/orders/a61a3726-ed46-44dc-8254-d646a2ef3eed?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO 06/13/2021 02:05:50 PM 127.0.0.1 - - [13/Jun/2021 14:05:50] "GET /api/orders/a61a3726-ed46-44dc-8254-d646a2ef3eed?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO 06/13/2021 02:05:53 PM 127.0.0.1 - - [13/Jun/2021 14:05:53] "[35m[1mGET /api/orders/a61a3726-ed46-44dc-8254-d646a2ef3eed HTTP/1.1[0m" 500 -
+INFO 06/13/2021 02:05:53 PM 127.0.0.1 - - [13/Jun/2021 14:05:53] "GET /api/orders/a61a3726-ed46-44dc-8254-d646a2ef3eed?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO 06/13/2021 02:05:53 PM 127.0.0.1 - - [13/Jun/2021 14:05:53] "GET /api/orders/a61a3726-ed46-44dc-8254-d646a2ef3eed?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO 06/13/2021 02:05:53 PM 127.0.0.1 - - [13/Jun/2021 14:05:53] "GET /api/orders/a61a3726-ed46-44dc-8254-d646a2ef3eed?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO 06/13/2021 02:05:57 PM 127.0.0.1 - - [13/Jun/2021 14:05:57] "GET /api/foods/ HTTP/1.1" 200 -
+INFO 06/13/2021 02:06:10 PM 127.0.0.1 - - [13/Jun/2021 14:06:10] "GET /api/foods/41c6a088-3582-470d-95e6-03da19f9d726 HTTP/1.1" 200 -
+INFO 06/13/2021 02:07:45 PM  * Detected change in '/home/vv/projects/sales2021/sales/models/orders.py', reloading
+INFO 06/13/2021 02:07:45 PM  * Restarting with stat
+INFO 06/13/2021 02:07:46 PM 127.0.0.1 - - [13/Jun/2021 14:07:46] "GET /api/orders/a61a3726-ed46-44dc-8254-d646a2ef3eed HTTP/1.1" 200 -
+INFO 06/13/2021 02:07:53 PM 127.0.0.1 - - [13/Jun/2021 14:07:53] "GET /api/orders HTTP/1.1" 200 -
+INFO 06/13/2021 02:09:24 PM  * Detected change in '/home/vv/projects/sales2021/sales/models/orders.py', reloading
+INFO 06/13/2021 02:09:24 PM  * Restarting with stat
+INFO 06/13/2021 02:09:24 PM  * Debugger PIN: 132-358-493
+INFO 06/13/2021 02:09:25 PM 127.0.0.1 - - [13/Jun/2021 14:09:25] "GET /api/orders HTTP/1.1" 200 -
+INFO 06/13/2021 02:09:54 PM 127.0.0.1 - - [13/Jun/2021 14:09:54] "GET /api/orders/83c1c4be-a0d1-4ac9-b6b2-70b7c89b9bff HTTP/1.1" 200 -
+INFO 06/13/2021 02:10:58 PM  * Detected change in '/home/vv/projects/sales2021/sales/rest/orders.py', reloading
+INFO 06/13/2021 02:10:58 PM  * Restarting with stat
+INFO 06/13/2021 02:11:01 PM 127.0.0.1 - - [13/Jun/2021 14:11:01] "GET /api/orders/83c1c4be-a0d1-4ac9-b6b2-70b7c89b9bff HTTP/1.1" 200 -
+INFO 06/13/2021 02:11:02 PM 127.0.0.1 - - [13/Jun/2021 14:11:02] "GET /api/orders/83c1c4be-a0d1-4ac9-b6b2-70b7c89b9bff HTTP/1.1" 200 -
+INFO 06/13/2021 02:11:05 PM 127.0.0.1 - - [13/Jun/2021 14:11:05] "GET /api/orders HTTP/1.1" 200 -
+INFO 06/13/2021 02:13:30 PM 127.0.0.1 - - [13/Jun/2021 14:13:30] "GET /api/orders HTTP/1.1" 200 -

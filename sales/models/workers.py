@@ -9,7 +9,7 @@ class Worker(db.Model):
     uuid = db.Column(db.String(36), unique=True)
     name = db.Column(db.String, nullable=False)
     salary = db.Column(db.Integer)
-
+    order_id = db.relationship('Order', backref='worker', lazy=True)
 
     def __init__(self, name, salary):
         self.name = name
