@@ -12,3 +12,13 @@ Where I should import models first approach I made import in sales/__init__.py b
 ## Question 3
 Working with orders:
 want to show name of worker instead of id for that additional study of context needed
+
+
+## Question 4
+in test_api_food.py test_post_food_wrong  if environment variable export FLASK_ENV=development is set we get Failture
+```
+AssertionError: b'{"message": "Wrong data"}\n' != b'{\n    "message": "Wrong data"\n}\n'
+```
+if this variable does not exist this test pass. 
+
+I should study behavior where in test environment I must to set configuration.

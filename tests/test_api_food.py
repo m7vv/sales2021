@@ -75,7 +75,7 @@ class TestFoodApi(unittest.TestCase):
         response = TestFoodApi.app.test_client().put(f'/api/foods/{food.uuid}', json=new_food)
         self.assertEqual(200, response.status_code)
 
-    def test_patch_food_good_uuid_wrong_data(self):
+    def test_put_food_good_uuid_wrong_data(self):
         with TestFoodApi.app.app_context():
             from sales.models import db
             food = db.session.query(Food).filter_by(name='Pancake with milk').first()

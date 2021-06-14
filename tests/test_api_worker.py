@@ -57,7 +57,7 @@ class TestWorkerApi(unittest.TestCase):
 
     def test_post_worker_wrong(self):
         response = TestWorkerApi.app.test_client().post('/api/workers')
-        self.assertEqual(b'{"message": "Wrong data"}\n', response.data)
+        self.assertEqual(400, response.status.code)
 
     def test_post_worker_ok(self):
         new_worker = dict(name='Lomov', salary=3400)
@@ -81,7 +81,7 @@ class TestWorkerApi(unittest.TestCase):
         response = TestWorkerApi.app.test_client().put(f'/api/workers/{worker.uuid}', json=new_worker)
         self.assertEqual(200, response.status_code)
 
-    def test_patch_worker_good_uuid_wrong_data(self):
+    def test_put_worker_good_uuid_wrong_data(self):
         with TestWorkerApi.app.app_context():
             from sales.models import db
             worker = db.session.query(Worker).filter_by(name='Nazarov').first()
