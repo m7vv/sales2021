@@ -4,6 +4,8 @@ import unittest
 from sales import create_app
 from sales.models import Food, Worker, Order
 
+base_order_url = '/api/orders/'
+
 
 class TestOrderApi(unittest.TestCase):
     """test cases for ordder api"""
@@ -74,6 +76,85 @@ class TestOrderApi(unittest.TestCase):
             db.drop_all()
 
     def test_get_orders(self):
-        response = TestOrderApi.app.test_client().get('/api/orders')
-        print(response.json)
-        self.assertIn(b'"name": "Hamburger"', response.data)
+        response = TestOrderApi.app.test_client().get(f'{base_order_url}')
+        self.assertEqual(3, len(response.json))
+        self.assertIn("'quantity': 1", str(response.json))
+
+    def test_get_order_by_uuid(self):
+        with TestOrderApi.app.app_context():
+            from sales.models import db
+            order = db.session.query(Order).filter_by(quantity=2).first()
+        response = TestOrderApi.app.test_client().get(f'{base_order_url}{order.uuid}')
+        self.assertEqual("Ivanov", response.json["worker"]["name"])
+
+    def test_get_order_by_uuid_wrong(self):
+        response = TestOrderApi.app.test_client().get(f'{base_order_url}56')
+        self.assertEqual(404, response.status_code)
+
+    def test_post_order_with_empty_json(self):
+        response = TestOrderApi.app.test_client().post(f'{base_order_url}')
+        self.assertEqual('Wrong data', response.json['message'])
+
+    def test_post_order_ok(self):
+        with TestOrderApi.app.app_context():
+            from sales.models import db
+            worker = db.session.query(Worker).first()
+            food = db.session.query(Food).first()
+        new_order = dict(worker_uuid=worker.uuid, food_uuid=food.uuid, quantity=12)
+        response = TestOrderApi.app.test_client().post(f'{base_order_url}', json=new_order)
+        self.assertEqual('Created successfully', response.json['message'])
+        response = TestOrderApi.app.test_client().get(f'{base_order_url}')
+        self.assertEqual(4, len(response.json))
+
+    def test_post_order_wrong_data(self):
+        with TestOrderApi.app.app_context():
+            from sales.models import db
+            worker = db.session.query(Worker).first()
+            food = db.session.query(Food).first()
+        new_order = dict(worker_uuid=worker.uuid, food_uuid=food.uuid, numbers=2)
+        response = TestOrderApi.app.test_client().post(f'{base_order_url}', json=new_order)
+        self.assertEqual('Wrong data', response.json['message'])
+
+    def test_put_order_ok(self):
+        with TestOrderApi.app.app_context():
+            from sales.models import db
+            order = db.session.query(Order).first()
+            worker = db.session.query(Worker).first()
+            food = db.session.query(Food).first()
+        new_order = dict(worker_uuid=worker.uuid, food_uuid=food.uuid, quantity=80)
+        response = TestOrderApi.app.test_client().put(f'{base_order_url}{order.uuid}', json=new_order)
+        self.assertEqual('Updated successfully', response.json['message'])
+        response = TestOrderApi.app.test_client().get(f'{base_order_url}')
+        self.assertEqual(3, len(response.json))
+        response = TestOrderApi.app.test_client().get(f'{base_order_url}{order.uuid}')
+        self.assertEqual(80, response.json['quantity'])
+
+    def test_put_order_good_uuid_wrong_data(self):
+        with TestOrderApi.app.app_context():
+            from sales.models import db
+            order = db.session.query(Order).first()
+            worker = db.session.query(Worker).first()
+            food = db.session.query(Food).first()
+        new_order = dict(worker_uuid=worker.uuid, food_uuid=food.uuid, fake=80)
+        response = TestOrderApi.app.test_client().put(f'{base_order_url}{order.uuid}', json=new_order)
+        self.assertEqual('Wrong data', response.json['message'])
+        response = TestOrderApi.app.test_client().get(f'{base_order_url}')
+        self.assertEqual(3, len(response.json))
+        response = TestOrderApi.app.test_client().get(f'{base_order_url}{order.uuid}')
+        self.assertEqual(2, response.json['quantity'])
+
+    def test_delete_order_by_uuid(self):
+        with TestOrderApi.app.app_context():
+            from sales.models import db
+            order = db.session.query(Order).first()
+        response = TestOrderApi.app.test_client().delete(f'{base_order_url}{order.uuid}')
+        self.assertEqual(204, response.status_code)
+        response = TestOrderApi.app.test_client().get(f'{base_order_url}')
+        self.assertEqual(2, len(response.json))
+
+
+    def test_delete_order_by_uuid_wrong(self):
+        response = TestOrderApi.app.test_client().delete(f'{base_order_url}255')
+        self.assertEqual(404, response.status_code)
+
+

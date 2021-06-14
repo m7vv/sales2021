@@ -55,7 +55,11 @@ class TestWorkerApi(unittest.TestCase):
         response = TestWorkerApi.app.test_client().get(f'/api/workers/{worker.uuid}')
         self.assertIn(b'"salary": 7000', response.data)
 
-    def test_post_worker_wrong(self):
+    def test_get_worker_by_uuid_wrong(self):
+        response = TestWorkerApi.app.test_client().get(f'/api/workers/777')
+        self.assertEqual(404, response.status_code)
+
+    def test_post_worker_with_empty_json(self):
         response = TestWorkerApi.app.test_client().post('/api/workers')
         self.assertEqual('Wrong data', response.json['message'])
 
@@ -121,9 +125,16 @@ class TestWorkerApi(unittest.TestCase):
         with TestWorkerApi.app.app_context():
             from sales.models import db
             worker = db.session.query(Worker).filter_by(name='Nazarov').first()
-        TestWorkerApi.app.test_client().delete(f'/api/workers/{worker.uuid}')
+        response = TestWorkerApi.app.test_client().delete(f'/api/workers/{worker.uuid}')
+
         response = TestWorkerApi.app.test_client().get(f'/api/workers/{worker.uuid}')
         self.assertNotIn(b'"salary": 5500', response.data)
+
+    def test_delete_worker_by_uuid_wrong(self):
+        response = TestWorkerApi.app.test_client().delete(f'/api/workers/255')
+        self.assertEqual(404, response.status_code)
+
+
 
 
 if __name__ == '__main__':
