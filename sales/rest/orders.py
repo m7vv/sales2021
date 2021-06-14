@@ -4,7 +4,7 @@ import logging
 from flask import request
 from flask_restful import Resource
 
-from sales.models import db
+from sales.models import db, Worker, Food
 from sales.models.orders import Order
 
 
@@ -38,9 +38,14 @@ class OrdersApi(Resource):
             logging.error('Attempt to create  order without json')
             return {'message': 'Wrong data'}, 400
         try:
+            worker = Worker.query.filter_by(uuid=order_json['worker_uuid']).first()
+            food = Food.query.filter_by(uuid=order_json['food_uuid']).first()
+
+
             order = Order(
-                name=order_json['name'],
-                price=order_json.get('price'),
+                worker=worker,
+                food=food,
+                quantity=order_json['quantity']
             )
             db.session.add(order)
             db.session.commit()
