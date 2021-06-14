@@ -57,7 +57,7 @@ class TestWorkerApi(unittest.TestCase):
 
     def test_post_worker_wrong(self):
         response = TestWorkerApi.app.test_client().post('/api/workers')
-        self.assertEqual(400, response.status.code)
+        self.assertEqual('Wrong data', response.json['message'])
 
     def test_post_worker_ok(self):
         new_worker = dict(name='Lomov', salary=3400)
