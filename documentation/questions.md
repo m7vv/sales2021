@@ -28,3 +28,7 @@ creation of food
 ```
 curl -X POST http://localhost:5000/api/foods -d '{"name": "Simple cake", "price":3450 }' -H 'Content-Type: application/json'
 ``` 
+
+## Question 5 Data consistency
+removing of food or worker cause mistake when I'm trying to see orders. One way checking and forbitten of changes  
+
