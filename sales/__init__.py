@@ -1,5 +1,7 @@
 import os
-from flask import Flask
+from flask import Flask, jsonify
+from flask_cors import CORS
+
 from .config import Config
 from .models import db, migrate
 from .rest import init_app
@@ -15,6 +17,7 @@ logging.basicConfig(filename='sales.log',
 def create_app(test_config=None):
     """create and configure the app"""
     app = Flask(__name__, instance_relative_config=True)
+
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'sales_test.sqlite'),
@@ -42,6 +45,12 @@ def create_app(test_config=None):
     def hello():
         return 'This is pet project'
 
+    # a simple page that says hello to another
+    @app.route('/ping')
+    def ping():
+        return jsonify('pong! for application')
+
     init_app(app)
+    CORS(app, resources={r"/api/*": {"origins": "*"}})
 
     return app
