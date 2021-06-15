@@ -22,3 +22,9 @@ AssertionError: b'{"message": "Wrong data"}\n' != b'{\n    "message": "Wrong dat
 if this variable does not exist this test pass. 
 
 I should study behavior where in test environment I must to set configuration.
+
+## curl 
+creation of food
+```
+curl -X POST http://localhost:5000/api/foods -d '{"name": "Simple cake", "price":3450 }' -H 'Content-Type: application/json'
+``` 
