@@ -28,6 +28,10 @@ export FLASK_APP=sales
 export FLASK_ENV=development
 flask run
 ```
+To run with gunicorn use for example command
+```bash
+gunicorn -b localhost:5000 -w 2 wsgi:app
+```
 
 To run web client (frontend)
 ```bash
